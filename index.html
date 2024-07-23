@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .gallery img:focus, .gallery img:hover {
+            outline: none;
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .description {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Interactive Photo Gallery</h1>
+        <p class="description">Explore the collection of beautiful images below. Each image is accompanied by alternative text for accessibility. Use your mouse or keyboard to interact with the gallery.</p>
+        <div class="gallery">
+            <img src="https://imgs.search.brave.com/wWtAQpbfJOtSuOaTTfgjcHl7venFiCbkBSwebB9B_bc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW9w/bGUuY29tL3RobWIv/TVB4YUNnOXRFci1u/WE4wcm1TR1p2dUR3/dVRVPS8xNTAweDAv/ZmlsdGVyczpub191/cHNjYWxlKCk6bWF4/X2J5dGVzKDE1MDAw/MCk6c3RyaXBfaWNj/KCk6Zm9jYWwoOTMz/eDU4MTo5MzV4NTgz/KS90aGUtYm95cy0x/LWIxODEwZjEyN2Iz/NDRhZmE5NTI3ODVl/YzBjMWU4MmRjLmpw/Zw" alt="Description of image 1" tabindex="0">
+            <img src="https://imgs.search.brave.com/gJTk_tU7p2aebU97-_XG4FymAuR4t6G0KqjzFItKLQo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudGhlZGlyZWN0/LmNvbS9tZWRpYS9h/cnRpY2xlX2Z1bGwv/dGhlLWJveXMtc2Vh/c29uLTQtcmVsZWFz/ZS1jYXN0LWFuZC1l/dmVyeXRoaW5nLXdl/LWtub3cuanBn" alt="Description of image 2" tabindex="0">
+            <img src="https://imgs.search.brave.com/g_9-d4g8ZvNiFYTlM5xVTnfxESf76ckoNk_aqdEFuzA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNvbGxpZGVy/aW1hZ2VzLmNvbS93/b3JkcHJlc3Mvd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDUv/dGhlLWJveXMtc2Vh/c29uLTMtZmVhdHVy/ZS0xLmpwZw" alt="Description of image 3" tabindex="0">
+            <img src="https://imgs.search.brave.com/T-rFYKEQnp-WhwSPL3Whp4DvGXlfbx3KOt9L4qaJj3c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk1EVmlNV1Zr/T1RVdE16STVOaTAw/TjJVMExUazFPVEF0/T0RZMVlURTVPV0Zo/TXpjeVhrRXlYa0Zx/Y0dkZVFXRnlibThA/LmpwZw" alt="Description of image 4" tabindex="0">
+            <img src="https://imgs.search.brave.com/Rs1MnQtldpE5w3AIZD7apZ3Mm-UX0tmTUuUEYy7oqo8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wZW9w/bGUuY29tL3RobWIv/eTFWLVNfV0YyNVNP/Znc3Tlp6RF82M1la/cG1NPS80MDAweDAv/ZmlsdGVyczpub191/cHNjYWxlKCk6bWF4/X2J5dGVzKDE1MDAw/MCk6c3RyaXBfaWNj/KCk6Zm9jYWwoOTk5/eDA6MTAwMXgyKS90/aGUtYm95cy05LWI0/ZjY5NGYwYjhkNjRj/NDNhZmY1NGY0YTg4/Y2VmOGI5LmpwZw" alt="Description of image 5" tabindex="0">
+            <img src="https://imgs.search.brave.com/2tZCfp6KNmeofxpI_8dNzuDnK03shiYMnoWypFtTcFE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL2htZy1wcm9k/L2ltYWdlcy9zdGFy/bGlnaHQtdGhlLWJv/eXMtMTU5NjUzOTUw/Mi5qcGc_Y3JvcD0w/LjU2NHh3OjEuMDB4/aDswLjQzNnh3LDAm/cmVzaXplPTk4MDoq" alt="Description of image 6" tabindex="0">
+            <img src="https://imgs.search.brave.com/cLtolMORYIAsEMyTL8PR-lGXQFZu2f-Jn28dIBN7s4Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL2htZy1wcm9k/L2ltYWdlcy90aGJ5/LXM0LXV0LTQwMi0y/MjA5MjYtc2F2amFz/LTAxMDIyLXIxLWNy/b3AtMzAwMC02NjY4/ODVlNjkxMjUyLmpw/Zz9jcm9wPTAuNjY4/eHc6MS4wMHhoOzAu/MDkyOXh3LDAmcmVz/aXplPTM2MDoq" alt="Description of image 7" tabindex="0">
+            <img src="https://imgs.search.brave.com/ZBtTofWlV2zGLSTIzFY8cfCJLkU9F4uNsxb_ALVDfxw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNvbGxpZGVy/aW1hZ2VzLmNvbS93/b3JkcHJlc3Mvd3At/Y29udGVudC91cGxv/YWRzLzIwMjEvMDUv/dGhlLWJveXMtc2Vh/c29uLTItY2FzdC10/aG9tZXIta2Fwb24t/amFjay1xdWFpZC1r/YXJsLXVyYmFuLWxh/ei1hbG9uc28uanBn" alt="Description of image 8" tabindex="0">
+            <img src="https://imgs.search.brave.com/bquQmnnc6QAuZuFWun1CfIk-G6QT7hJr96GKHYfye_8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLnNyY2RuLmNv/bS93b3JkcHJlc3Mv/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MDYvdGhlLWJveXMt/YS10cmFpbi5qcGc" alt="Description of image 9" tabindex="0">
+            <img src="https://imgs.search.brave.com/GHuYXWiDBoi3a3gNb3wyjjRe4BA1Rb-9NxfB8gHP0nY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMxLmNvbGxpZGVy/aW1hZ2VzLmNvbS93/b3JkcHJlc3Mvd3At/Y29udGVudC91cGxv/YWRzLzIwMjIvMDUv/Z3VucG93ZGVyLXRo/ZS1ib3lzLXNlYXNv/bi0zLmpwZw" alt="Description of image 10" tabindex="0">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Page has loaded');
+
+            const images = document.querySelectorAll('.gallery img');
+
+            images.forEach((img, index) => {
+                img.setAttribute('tabindex', index + 1);
+
+                img.addEventListener('focus', () => {
+                    console.log(`Image ${index + 1} focused`);
+                });
+
+                img.addEventListener('blur', () => {
+                    console.log(`Image ${index + 1} blurred`);
+                });
+
+                img.addEventListener('mousemove', () => {
+                    console.log(`Mouse moved over image ${index + 1}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
